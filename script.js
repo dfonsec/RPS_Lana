@@ -15,9 +15,29 @@ function getPlayerSelection(){
     return playerSelection;
 }
 
-function playRound(playerSelection, computerSelection){
-    computerSelection = getComputerChoice();
-    playerSelection = getPlayerSelection();
+function playRound(){
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerSelection();
+
+    if (playerSelection === computerSelection){
+        return `Draw! Both players chose ${playerSelection}`;
+    }
+
+    else if (playerSelection === "rock" && computerSelection === "scissors"){
+        return "You win! Rock beats scissors.";
+    }
+
+    else if (playerSelection === "paper" && computerSelection === "rock"){
+        return "You win! Paper beats rock";
+    }
+    
+    else if (playerSelection === "scissors" && computerSelection === "paper"){
+        return "You win! Scissors beats paper";
+    }
+
+    else{
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
+    }
 }
 
 
