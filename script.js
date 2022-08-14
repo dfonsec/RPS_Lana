@@ -43,7 +43,28 @@ function playRound(){
 
 
 function game(){
-    // code here
+    let playerScore = 0; 
+    let computerScore = 0; 
+    
+    for (let i = 0; i < 5; i++){
+
+        let result = playRound();
+
+        if (result.includes("win")){
+            playerScore++; 
+        }else if (result.includes("lose")){
+            computerScore++; 
+        }
+        
+        console.log(result + ` Your score: ${playerScore} Computer score ${computerScore}.`);
+    }
+
+    if (playerScore > computerScore){
+        return "Congratulations, you won!"
+    }
+    else{ 
+        return "Aw, you lost!"
+    }
 }
     
 
